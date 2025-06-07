@@ -229,7 +229,7 @@ body {
   padding: 12px 5px;
   outline: none;
   transition: border-color 0.3s ease, color 0.3s ease;
-  font-family: "Copperplate Gothic", "Copperplate", serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   resize: none;
 }
 
