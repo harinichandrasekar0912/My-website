@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resume | Harini C</title>
+  <link rel="stylesheet" href="style/main.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Harini C</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="projects.html">My Projects</a></li>
+        <li><a href="resume.html" class="active">Resume</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content resume">
+    <h1>Download My Resume</h1>
+    <p>Please enter your email below and click "Get Resume".</p>
+    
+    <form id="resume-form" class="resume-form">
+      <input type="email" id="email" name="email" placeholder="Your email address" required />
+      <button type="submit">Get Resume</button>
+    </form>
+
+    <p id="message" class="message"></p>
+  </main>
+
+  <script>
+    const form = document.getElementById('resume-form');
+    const message = document.getElementById('message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+
+      if (!email) {
+        message.textContent = "Please enter a valid email.";
+        message.style.color = 'red';
+        return;
+      }
+
+      // Here, you would add backend logic to email the resume.
+      // For now, we simulate success and provide direct download.
+
+      message.style.color = 'green';
+      message.textContent = "Thank you! Your download will begin shortly.";
+
+      // Trigger resume download
+      const link = document.createElement('a');
+      link.href = 'assets/files/Harini_Chandrasekar_Resume.pdf'; // your resume pdf path
+      link.download = 'Harini_Chandrasekar_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      form.reset();
+    });
+  </script>
+</body>
+</html>
