@@ -4,8 +4,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My projects | Harini C</title>
+  <title>My Projects | Harini C</title>
   <link rel="stylesheet" href="style/main.css" />
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .project-tile {
+      background: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-tile img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .project-title {
+      font-family: 'Montserrat', sans-serif;
+      padding: 0.8rem 0;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .project-tile:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,8 +60,8 @@
       <div class="logo">HARINI CHANDRASEKAR</div>
       <ul class="nav-links">
         <li><a href="index.html">HOME</a></li>
-        <li><a href="about.html" class="active">ABOUT ME</a></li>
-        <li><a href="projects.html">MY PROJECTS</a></li>
+        <li><a href="about.html">ABOUT ME</a></li>
+        <li><a href="projects.html" class="active">MY PROJECTS</a></li>
         <li><a href="resume.html">RESUME</a></li>
         <li><a href="contact.html">CONTACT ME</a></li>
       </ul>
@@ -24,22 +71,52 @@
   <main class="content projects">
     <h1>MY PROJECTS</h1>
     <section class="project-grid">
+
+      <a href="myprojects/it-office.html" class="project-tile">
+        <img src="https://drive.google.com/uc?export=view&id=**YOUR_IMAGE_ID_HERE**" alt="IT Office Design" />
+        <div class="project-title">IT Office Design</div>
+      </a>
+
+      <a href="myprojects/apartment.html" class="project-tile">
+        <img src="assets/images/apartment.jpg" alt="Luxury Apartment" />
+        <div class="project-title">Luxury Apartment Design</div>
+      </a>
+
       <a href="myprojects/school.html" class="project-tile">
-        <img src="assets/images/school.jpg" alt="School Design" />
-        <div class="project-title">School Design</div>
+        <img src="assets/images/school.jpg" alt="Elementary School" />
+        <div class="project-title">Elementary School Design</div>
       </a>
 
-      <a href="myprojects/housing.html" class="project-tile">
-        <img src="assets/images/housing.jpg" alt="Housing Complex" />
-        <div class="project-title">Housing Complex</div>
+      <a href="myprojects/residence.html" class="project-tile">
+        <img src="assets/images/residence.jpg" alt="Luxury Residence" />
+        <div class="project-title">Luxury Individual Residence</div>
       </a>
 
-      <a href="myprojects/museum.html" class="project-tile">
-        <img src="assets/images/museum.jpg" alt="Museum Design" />
-        <div class="project-title">Museum Design</div>
+      <a href="myprojects/restobar.html" class="project-tile">
+        <img src="assets/images/restobar.jpg" alt="Restobar" />
+        <div class="project-title">Restobar Design</div>
       </a>
 
-      <!-- Add more project tiles here -->
+      <a href="myprojects/maramangalam-study.html" class="project-tile">
+        <img src="assets/images/maramangalam-study.jpg" alt="Maramangalam Study" />
+        <div class="project-title">Maramangalam Study Sheets</div>
+      </a>
+
+      <a href="myprojects/maramangalam-proposal.html" class="project-tile">
+        <img src="assets/images/maramangalam-proposal.jpg" alt="Design Proposal" />
+        <div class="project-title">Design Proposal – Maramangalam Village</div>
+      </a>
+
+      <a href="myprojects/boutique.html" class="project-tile">
+        <img src="assets/images/boutique.jpg" alt="Boutique" />
+        <div class="project-title">Boutique Design</div>
+      </a>
+
+      <a href="myprojects/misc.html" class="project-tile">
+        <img src="assets/images/misc.jpg" alt="Miscellaneous" />
+        <div class="project-title">Miscellaneous Works</div>
+      </a>
+
     </section>
   </main>
 </body>
