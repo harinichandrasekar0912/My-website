@@ -25,19 +25,19 @@
     .project-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-      padding: 3rem;
+      gap: 1.5rem;
+      padding: 2rem 1rem;
       max-width: 1000px;
       margin: auto;
-      animation: fadeIn 1.2s ease-in-out;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .project-tile {
       position: relative;
       width: 100%;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 2.83 / 1;
       overflow: hidden;
-      border-radius: 16px;
+      border-radius: 12px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
@@ -47,12 +47,11 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 16px;
     }
 
     .project-tile:hover {
-      transform: scale(1.025);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .project-title {
@@ -110,7 +109,7 @@
     @media (max-width: 768px) {
       .project-grid {
         grid-template-columns: 1fr;
-        padding: 2rem;
+        padding: 1.5rem;
       }
     }
   </style>
@@ -134,49 +133,48 @@
     <h1>MY PROJECTS</h1>
     <section class="project-grid">
 
-      <!-- All using same image for now -->
       <a href="myprojects/it-office.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="IT Office Design">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="IT Office Design">
         <div class="project-title">IT OFFICE DESIGN</div>
       </a>
 
       <a href="myprojects/apartment.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Luxury Apartment Design">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Luxury Apartment Design">
         <div class="project-title">LUXURY APARTMENT DESIGN</div>
       </a>
 
       <a href="myprojects/school.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Elementary School Design">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Elementary School Design">
         <div class="project-title">ELEMENTARY SCHOOL DESIGN</div>
       </a>
 
       <a href="myprojects/residence.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Luxury Individual Residence">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Luxury Individual Residence">
         <div class="project-title">LUXURY INDIVIDUAL RESIDENCE</div>
       </a>
 
       <a href="myprojects/restobar.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Restobar Design">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Restobar Design">
         <div class="project-title">RESTOBAR DESIGN</div>
       </a>
 
       <a href="myprojects/maramangalam-study.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Maramangalam Study Sheets">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Maramangalam Study Sheets">
         <div class="project-title">MARAMANGALAM STUDY SHEETS</div>
       </a>
 
       <a href="myprojects/maramangalam-proposal.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Design Proposal">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Design Proposal">
         <div class="project-title">DESIGN PROPOSAL – MARAMANGALAM</div>
       </a>
 
       <a href="myprojects/boutique.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Boutique Design">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Boutique Design">
         <div class="project-title">BOUTIQUE DESIGN</div>
       </a>
 
       <a href="myprojects/misc.html" class="project-tile">
-        <img src="https://drive.google.com/uc?export=view&id=1S2lXIvIJbhnn51Bl_Hrf1XfA_qSeXp6l" alt="Miscellaneous Works">
+        <img src="https://drive.google.com/uc?export=view&id=1UaaM2QmcsIpdjiYXfGxKqZt_eOrrgOe1" alt="Miscellaneous Works">
         <div class="project-title">MISCELLANEOUS WORKS</div>
       </a>
 
