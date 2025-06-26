@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: #eeeee4;
+  background-color: #dfdfdd;
   color: #000;
   line-height: 1.6;
 }
@@ -19,7 +19,7 @@ body {
   align-items: center;
   padding: 20px 40px;
   border-bottom: 1px solid #ddd;
-  background-color: #eeeee4;
+  background-color: #dfdfdd;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -115,7 +115,7 @@ body {
   border: 1px solid #eee;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #eeeee4;
+  background-color: #dfdfdd;
   transition: box-shadow 0.3s ease;
 }
 
