@@ -73,12 +73,12 @@ body {
 /* About Section */
 .about-section {
   max-width: 800px;
-  margin: 80px auto;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
 .about-section h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
