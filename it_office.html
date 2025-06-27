@@ -1,0 +1,194 @@
+<!-- it_office.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IT Office | Harini C</title>
+
+  <!-- shared stylesheet -->
+  <link rel="stylesheet" href="style/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- page-specific tweaks -->
+  <style>
+    /* ───── Back-link ───── */
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.4rem;
+      font-size:1rem;
+      font-weight:600;
+      margin:1.5rem 0 2rem 0;
+      text-decoration:none;
+      color:#000;
+    }
+    .back-link:hover{color:#666;}
+
+    /* ───── Project meta text ───── */
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.75rem 1.25rem;
+      margin:1.25rem 0 2.5rem;
+    }
+    .meta dt{
+      font-weight:700;
+      font-size:1rem;
+    }
+    .meta dd{
+      margin:0;
+      font-size:1rem;
+    }
+
+    /* ───── Image grid ───── */
+    .image-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:20px;                    /* tighter than projects page */
+    }
+    .image-grid img{
+      width:100%; aspect-ratio:4/3;
+      object-fit:cover;
+      border-radius:10px;
+      cursor:pointer;
+      transition:transform .25s;
+    }
+    .image-grid img:hover{transform:scale(1.03);}
+
+    /* ───── Lightbox modal ───── */
+    .modal{
+      position:fixed; inset:0;
+      display:none; align-items:center; justify-content:center;
+      backdrop-filter:blur(6px);
+      background:rgba(0,0,0,.3);
+      z-index:1000;
+    }
+    .modal.open{display:flex;}
+
+    .modal-content{
+      position:relative;
+      max-width:90vw; max-height:90vh;
+      border-radius:14px;
+      box-shadow:0 12px 40px rgba(0,0,0,.35);
+    }
+    .modal-content img{
+      width:100%; height:auto;
+      display:block;
+      border-radius:14px;
+    }
+
+    /* Close & download buttons */
+    .modal-btn{
+      position:absolute;
+      top:8px; font-size:1.4rem;
+      background:rgba(255,255,255,.85);
+      border:none; padding:.35rem .55rem;
+      border-radius:50%;
+      cursor:pointer;
+    }
+    .close-btn{left:8px;}
+    .download-btn{right:8px;}
+
+    @media(max-width:768px){
+      .back-link{margin-left:.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="brand">
+      <img src="assets/logo-sphere.png" alt="Logo" class="logo-img">
+      <span class="logo-text">HARINI CHANDRASEKAR</span>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">HOME</a></li>
+      <li><a href="about.html">ABOUT ME</a></li>
+      <li><a href="projects.html" class="active">MY PROJECTS</a></li>
+      <li><a href="resume.html">RESUME</a></li>
+      <li><a href="contact.html">CONTACT ME</a></li>
+    </ul>
+  </nav>
+  <div class="overlay" id="navOverlay"></div>
+</header>
+
+<main style="max-width:1000px;margin:0 auto;padding:0 20px;">
+
+  <!-- back -->
+  <a href="projects.html" class="back-link">&lt; Go back to Projects</a>
+
+  <!-- title -->
+  <h1 style="font-size:1.25rem;font-weight:600;margin-bottom:1rem;">IT OFFICE DESIGN</h1>
+
+  <!-- meta / description -->
+  <dl class="meta">
+    <dt>Context:</dt><dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+    <dt>Scope:</dt><dd>Masterplanning, architecture, interiors.</dd>
+    <dt>Tools:</dt><dd>Rhino, Grasshopper, Revit, Adobe Suite.</dd>
+    <!-- duplicate as needed -->
+  </dl>
+
+  <!-- image tiles -->
+  <section class="image-grid">
+    <img src="assets/it-office1.jpg" alt="IT office view 1">
+    <img src="assets/it-office2.jpg" alt="IT office view 2">
+    <img src="assets/it-office3.jpg" alt="IT office view 3">
+    <img src="assets/it-office4.jpg" alt="IT office view 4">
+    <!-- add / remove tiles as required -->
+  </section>
+</main>
+
+<!-- lightbox modal -->
+<div class="modal" id="imgModal">
+  <div class="modal-content">
+    <button class="modal-btn close-btn" id="closeBtn" aria-label="Close">&times;</button>
+    <button class="modal-btn download-btn" id="downloadBtn" aria-label="Download">&#8681;</button>
+    <img src="" alt="enlarged" id="modalImg">
+  </div>
+</div>
+
+<!-- scripts -->
+<script>
+/* ── hamburger from existing pages ── */
+const burger  = document.getElementById('hamburger');
+const nav     = document.getElementById('navLinks');
+const overlay = document.getElementById('navOverlay');
+const toggleMenu = ()=>{nav.classList.toggle('open');overlay.style.display = nav.classList.contains('open')?'block':'none';};
+burger.addEventListener('click',toggleMenu);
+overlay.addEventListener('click',toggleMenu);
+
+/* ── lightbox logic ── */
+const modal       = document.getElementById('imgModal');
+const modalImg    = document.getElementById('modalImg');
+const closeBtn    = document.getElementById('closeBtn');
+const downloadBtn = document.getElementById('downloadBtn');
+
+document.querySelectorAll('.image-grid img').forEach(img=>{
+  img.addEventListener('click', ()=>{
+    modalImg.src = img.src;
+    modal.classList.add('open');
+    downloadBtn.setAttribute('data-src', img.src);
+  });
+});
+
+closeBtn.addEventListener('click', ()=> modal.classList.remove('open'));
+modal.addEventListener('click', e=>{
+  if(e.target === modal) modal.classList.remove('open'); // click outside image closes
+});
+
+downloadBtn.addEventListener('click', ()=>{
+  const link = document.createElement('a');
+  link.href   = downloadBtn.getAttribute('data-src');
+  link.download = link.href.split('/').pop();
+  link.click();
+});
+</script>
+</body>
+</html>
