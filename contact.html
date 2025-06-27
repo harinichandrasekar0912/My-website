@@ -10,7 +10,14 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">HARINI CHANDRASEKAR</div>
+            <!-- Logo (or site title) -->
+<div class="logo">HARINI CHANDRASEKAR</div>
+
+<!-- Mobile hamburger -->
+<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+  <span></span><span></span><span></span>
+</button>
+
       <ul class="nav-links">
         <li><a href="index.html">HOME</a></li>
         <li><a href="about.html" class="active">ABOUT ME</a></li>
@@ -19,6 +26,7 @@
         <li><a href="contact.html">CONTACT ME</a></li>
       </ul>
     </nav>
+    <div class="overlay" id="navOverlay"></div>
   </header>
 
   <main class="content contact">
@@ -65,5 +73,22 @@
       }
     });
   </script>
+
+
+  <script>
+const burger   = document.getElementById('hamburger');
+const nav      = document.getElementById('navLinks');
+const overlay  = document.getElementById('navOverlay');
+
+function toggleMenu(){
+  nav.classList.toggle('open');
+  overlay.style.display = nav.classList.contains('open') ? 'block' : 'none';
+}
+
+burger.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+</script>
+
 </body>
 </html>
