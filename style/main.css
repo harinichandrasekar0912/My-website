@@ -142,17 +142,21 @@ body {
 
 /* About Section */
 
-    /*–––––– Profile photo ––––––*/
-    .profile-photo {
-      width: 325px;
-      max-width: 100%;
-      border-radius: 10px;
-      opacity: 0.8;
-      transition: opacity 0.3s ease;
-      float: center;
-      margin: 0 2rem 2rem 0;
-    }
-    .profile-photo:hover { opacity: 1; }
+/*–––––– Profile photo ––––––*/
+.profile-photo{
+  width:325px;          /* fixed width */
+  max-width:100%;       /* never overflow on tiny screens */
+  display:block;        /* takes the whole line → text drops below */
+  margin:0 auto 2rem;   /* centre horizontally, 2 rem gap underneath */
+  border-radius:10px;   /* soft corners */
+  opacity:0.8;          /* subtle transparency */
+  transition:opacity .8s ease;
+}
+/* remove this line if it’s still in the file
+   float:center;
+*/
+
+.profile-photo:hover{opacity:1;}
 
 
 .about-section {
