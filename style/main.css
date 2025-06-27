@@ -28,7 +28,8 @@ body {
 /* –– default / desktop –– */
 .logo{
   font-size:1.5rem;        /* stays 2 rem on laptops */
-  line-height:1;         /* tight baseline */
+  line-height:1;
+  font-weight:700;         /* tight baseline */
   margin:0;
 }
 
@@ -41,8 +42,9 @@ body {
 /* –– mobile ≤ 768 px –– */
 @media (max-width:768px){
   .logo{
-    font-size:1rem;      /* shrink to 1 rem on phones */
-    line-height:22px;    /* matches .hamburger height → bottoms line up */
+    font-size:1rem;   
+    font-weight:700;   /* shrink to 1 rem on phones */
+    line-height:50px;    /* matches .hamburger height → bottoms line up */
   }
 }
 
