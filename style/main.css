@@ -79,8 +79,8 @@ body {
     flex-direction:column;
     align-items:flex-start;
     gap:1.2rem;
-    background:#ebebeb;  /* translucent */
-    backdrop-filter:blur(10px);         /* glassy blur */
+    background:#ffffff;  /* translucent */
+    backdrop-filter:blur(12px);         /* glassy blur */
     transform:translateX(100%);         /* slide off-screen */
     transition:transform .8s ease;
   }
