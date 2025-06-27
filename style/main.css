@@ -123,6 +123,20 @@ body {
 }
 
 /* About Section */
+
+    /*–––––– Profile photo ––––––*/
+    .profile-photo {
+      width: 220px;
+      max-width: 100%;
+      border-radius: 10px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+      float: left;
+      margin: 0 1.5rem 1rem 0;
+    }
+    .profile-photo:hover { opacity: 1; }
+
+
 .about-section {
   max-width: 800px;
   margin: 60px auto;
