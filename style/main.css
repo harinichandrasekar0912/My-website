@@ -25,9 +25,25 @@ body {
   z-index: 999;
 }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* –– default / desktop –– */
+.logo{
+  font-size:1.5rem;        /* stays 2 rem on laptops */
+  line-height:1;         /* tight baseline */
+  margin:0;
+}
+
+/* –– force navbar items to share a baseline –– */
+.navbar{
+  display:flex;
+  align-items:flex-end;  /* bottoms of children align */
+}
+
+/* –– mobile ≤ 768 px –– */
+@media (max-width:768px){
+  .logo{
+    font-size:1rem;      /* shrink to 1 rem on phones */
+    line-height:22px;    /* matches .hamburger height → bottoms line up */
+  }
 }
 
 .nav-links {
