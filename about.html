@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About me | Harini C</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Site‑wide styles -->
   <link rel="stylesheet" href="style/main.css" />
+
+  <!-- Page‑specific tweaks for the profile photo -->
+  <style>
+    .profile-photo {
+      width: 220px;                 /* smaller footprint */
+      max-width: 100%;
+      border-radius: 10px;          /* gently curved corners */
+      opacity: 0.8;                 /* subtle transparency */
+      transition: opacity 0.3s ease;
+      float: left;                  /* left‑align with text */
+      margin: 0 1.5rem 1rem 0;      /* breathing room around image */
+    }
+    .profile-photo:hover {
+      opacity: 1;                   /* solid on hover */
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -23,25 +43,25 @@
 
   <main class="content about">
     <section class="about-section">
-
-            <!-- Profile photo -->
-      <img src="assets/My profile photo.jpg" alt="Photo of Harini Chandrasekar" class="profile-photo" />
-      
       <h1>ABOUT ME</h1>
+
+      <!-- Profile photo -->
+      <img src="assets/My profile photo.jpg" alt="Photo of Harini Chandrasekar" class="profile-photo" />
+
       <p>
         Hello, I’m Harini Chandrasekar—an architecture undergrad from Chennai who's trying to sketch out the next decade as I go.
       </p>
       <p>
-        For those of you who haven't yet spent some time with me: some days I’m lighting a scene and wondering when Pixar might call; others I’m poking around Apple’s visionOS playground or crunching load paths until the spreadsheet begs for mercy. On quieter nights I feed a brief’s constraints into an algorithm and watch which layouts stagger out of the gauntlet—usually while sipping tea. All these threads share one fuel: an itch to see numbers, colour and space snap into lockstep.
+        For those of you who haven't yet spent some time with me: some days I’m lighting a scene and wondering when Pixar might call; others I’m poking around Apple’s <em>visionOS</em> playground or crunching load paths until the spreadsheet begs for mercy. On quieter nights I feed a brief’s constraints into an algorithm and watch which layouts stagger out of the gauntlet—usually while sipping tea. All these threads share one fuel: an itch to see numbers, colour, and space snap into lockstep.
       </p>
       <p>
         Optimistic to a fault, competitive for sport—second place makes me twitchy; first place gifts me imposter syndrome. I chase the podium anyway, promising the ego it can nap later.
       </p>
       <p>
-Inside my head it’s Inside Out on turbo: Logic drags Creativity on side-quests while Anxiety supplies unhelpfully colourful commentary. My favourite pastime is riding a runaway thought just to see where it jumps the tracks; most ideas here began exactly that way.
+        Inside my head it’s <em>Inside Out</em> on turbo: Logic drags Creativity on side quests while Anxiety supplies unhelpfully colourful commentary. My favourite pastime is riding a runaway thought just to see where it jumps the tracks; most ideas here began exactly that way.
       </p>
-       <p>
-This page is equal parts progress log and confession booth. Browse, prod, or just wave if the silence gets awkward—odds are I’m unpicking another rogue idea. And yes, corralling all these loosely related projects in one place feels absurdly good, doesn’t it? Welcome to the organised chaos; hopefully it helps launch you onto your own tangent!
+      <p>
+        This page is equal parts progress log and confession booth. Browse, prod, or just wave if the silence gets awkward—odds are I’m unpicking another rogue idea. And yes, corralling all these loosely related projects in one place feels absurdly good, doesn’t it? Welcome to the organised chaos; hopefully it helps launch you onto your own tangent!
       </p>
     </section>
   </main>
