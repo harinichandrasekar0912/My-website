@@ -80,7 +80,7 @@ body {
     align-items:flex-start;
     gap:1.2rem;
     background:rgba(255,255,255,0.55);  /* translucent */
-    backdrop-filter:blur(12px);         /* glassy blur */
+    backdrop-filter:blur(10px);         /* glassy blur */
     transform:translateX(100%);         /* slide off-screen */
     transition:transform .8s ease;
   }
