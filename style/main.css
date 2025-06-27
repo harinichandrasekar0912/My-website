@@ -132,7 +132,7 @@ body {
       opacity: 0.8;
       transition: opacity 0.3s ease;
       float: center;
-      margin: 0 30rem 2rem 0;
+      margin: 30rem 30rem 2rem 0;
     }
     .profile-photo:hover { opacity: 1; }
 
