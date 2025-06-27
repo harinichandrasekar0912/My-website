@@ -126,13 +126,13 @@ body {
 
     /*–––––– Profile photo ––––––*/
     .profile-photo {
-      width: 220px;
+      width: 325px;
       max-width: 100%;
       border-radius: 10px;
       opacity: 0.8;
       transition: opacity 0.3s ease;
       float: left;
-      margin: 0 1.5rem 1rem 0;
+      margin: 0 30rem 2rem 0;
     }
     .profile-photo:hover { opacity: 1; }
 
