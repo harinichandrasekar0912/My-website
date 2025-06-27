@@ -260,7 +260,7 @@ body {
 }
 
 .resume-form button {
-  background-color: #5d6e7f;
+  background-color:rgb(122, 120, 118);
   color: white;
   padding: 12px;
   border: none;
@@ -337,7 +337,7 @@ body {
 }
 
 .contact-form button {
-  background-color: #5d6e7f;
+  background-color: rgb(122, 120, 118);
   color: white;
   padding: 12px;
   border: none;
