@@ -12,6 +12,32 @@ body {
   line-height: 1.6;
 }
 
+/* container keeps logo + name aligned */
+.brand{
+  display:flex;
+  align-items:flex-end;   /* bottom-align with hamburger */
+  gap:0.5rem;
+}
+
+/* sphere logo image */
+.logo-img{
+  width:40px;             /* desktop size */
+  height:40px;
+  object-fit:contain;
+}
+
+/* shrink logo on phones */
+@media (max-width:768px){
+  .logo-img{width:28px; height:28px;}
+}
+
+/* existing logo text tweaks (optional) */
+.logo-text{
+  font-size:1.5rem;       /* matches previous settings */
+  font-weight:700;
+  line-height:1;
+}
+
 /* Navbar */
 .navbar {
   display: flex;
