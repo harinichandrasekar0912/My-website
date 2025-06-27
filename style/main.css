@@ -56,10 +56,11 @@ body {
   background:none;
   border:none;
   cursor:pointer;
+  color: #666;                /* grey stroke colour */
 }
 .hamburger span{
   display:block;
-  height:3px; width:100%;
+  height:2px; width:100%;
   background:currentColor;
   border-radius:2px;
 }
@@ -78,10 +79,10 @@ body {
     flex-direction:column;
     align-items:flex-start;
     gap:1.2rem;
-    background:rgba(255,255,255,0.55);  /* translucent */
-    backdrop-filter:blur(12px);         /* glassy blur */
+    background:#ebebeb;  /* translucent */
+    backdrop-filter:blur(10px);         /* glassy blur */
     transform:translateX(100%);         /* slide off-screen */
-    transition:transform .3s ease;
+    transition:transform .8s ease;
   }
   .nav-links.open{transform:translateX(0);}
 }
