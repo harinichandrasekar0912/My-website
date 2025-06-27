@@ -69,18 +69,26 @@
   }
   .modal.open{display:flex;}
 
-  .modal-content{
-    position:relative;
-    max-width:90vw; max-height:90vh;            /* never force scroll */
-    border-radius:14px;
-    box-shadow:0 12px 40px rgba(0,0,0,.35);
-  }
-  .modal-content img{
-    max-width:100%; max-height:100%;
-    width:auto; height:auto;                   /* fit neatly on one screen */
-    display:block;
-    border-radius:14px;
-  }
+/* old .modal-content { … }  ⟶  new */
+.modal-content{
+  position:relative;
+  max-width:90vw;            /* width limit unchanged */
+  max-height:85vh;           /* ↓ to keep image fully on-screen */
+  border-radius:14px;
+  box-shadow:0 12px 40px rgba(0,0,0,.35);
+  overflow:hidden;           /* clip when user zooms */
+}
+
+/* old .modal-content img { … }  ⟶  new */
+.modal-content img{
+  max-width:100%;
+  max-height:100%;
+  width:auto; height:auto;
+  object-fit:contain;        /* always show whole image */
+  display:block;
+  border-radius:14px;
+  transition:transform .2s ease;
+}
 
   /* Close & download buttons */
   .modal-btn{
@@ -172,39 +180,61 @@
 
 <!-- scripts -->
 <script>
-/* ── hamburger from existing pages ── */
-const burger  = document.getElementById('hamburger');
-const nav     = document.getElementById('navLinks');
-const overlay = document.getElementById('navOverlay');
-const toggleMenu = ()=>{nav.classList.toggle('open');overlay.style.display = nav.classList.contains('open')?'block':'none';};
-burger.addEventListener('click',toggleMenu);
-overlay.addEventListener('click',toggleMenu);
+/* ── hamburger toggle ── */
+const burger   = document.getElementById('hamburger');
+const nav      = document.getElementById('navLinks');
+const overlay  = document.getElementById('navOverlay');
 
-/* ── lightbox logic ── */
+function toggleMenu(){
+  nav.classList.toggle('open');
+  overlay.style.display = nav.classList.contains('open') ? 'block' : 'none';
+}
+burger.addEventListener('click', toggleMenu);
+overlay.addEventListener('click', toggleMenu);
+
+/* ── light-box elements ── */
 const modal       = document.getElementById('imgModal');
 const modalImg    = document.getElementById('modalImg');
 const closeBtn    = document.getElementById('closeBtn');
 const downloadBtn = document.getElementById('downloadBtn');
 
+/* zoom state */
+let scale = 1;
+
+/* open light-box */
 document.querySelectorAll('.image-grid img').forEach(img=>{
-  img.addEventListener('click', ()=>{
-    modalImg.src = img.src;
+  img.addEventListener('click',()=>{
+    modalImg.src = img.src;        /* show chosen image   */
+    scale = 1;                     /* reset zoom          */
+    modalImg.style.transform = 'scale(1)';
     modal.classList.add('open');
-    downloadBtn.setAttribute('data-src', img.src);
+    downloadBtn.dataset.src = img.src;   /* for download   */
   });
 });
 
-closeBtn.addEventListener('click', ()=> modal.classList.remove('open'));
+/* close handlers */
+function closeLightbox(){ modal.classList.remove('open'); }
+closeBtn.addEventListener('click', closeLightbox);
 modal.addEventListener('click', e=>{
-  if(e.target === modal) modal.classList.remove('open'); // click outside image closes
+  if(e.target === modal) closeLightbox(); /* click outside */
 });
 
+/* download button */
 downloadBtn.addEventListener('click', ()=>{
-  const link = document.createElement('a');
-  link.href   = downloadBtn.getAttribute('data-src');
-  link.download = link.href.split('/').pop();
-  link.click();
+  const a = document.createElement('a');
+  a.href      = downloadBtn.dataset.src;
+  a.download  = a.href.split('/').pop();
+  a.click();
+});
+
+/* wheel / pinch zoom inside light-box */
+modalImg.addEventListener('wheel', e=>{
+  e.preventDefault();
+  const delta = e.deltaY < 0 ? 0.1 : -0.1;   /* in or out   */
+  scale = Math.min(Math.max(1, scale + delta), 3);  /* clamp 1–3× */
+  modalImg.style.transform = `scale(${scale})`;
 });
 </script>
+
 </body>
 </html>
