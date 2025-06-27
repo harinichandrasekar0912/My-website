@@ -65,14 +65,21 @@ body {
   align-items:flex-end;  /* bottoms of children align */
 }
 
-/* –– mobile ≤ 768 px –– */
+/* — mobile ≤ 768 px — */
 @media (max-width:768px){
-  .logo{
-    font-size:1rem;   
-    font-weight:700;   /* shrink to 1 rem on phones */
-    line-height:22px;    /* matches .hamburger height → bottoms line up */
+
+  /* keep logo image + text sitting on same bottom line as burger */
+  .brand,
+  .navbar{
+    align-items:flex-end;      /* all children hug the bottom edge */
+  }
+
+  .logo-text{
+    font-size:1rem;            /* the size you wanted */
+    line-height:24px;          /* == hamburger height → bottoms align */
   }
 }
+
 
 .nav-links {
   list-style: none;
