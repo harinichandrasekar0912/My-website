@@ -75,20 +75,20 @@
   </script>
 
 
+  <!-- Toggle script -->
   <script>
-const burger   = document.getElementById('hamburger');
-const nav      = document.getElementById('navLinks');
-const overlay  = document.getElementById('navOverlay');
+    const burger   = document.getElementById('hamburger');
+    const nav      = document.getElementById('navLinks');
+    const overlay  = document.getElementById('navOverlay');
 
-function toggleMenu(){
-  nav.classList.toggle('open');
-  overlay.style.display = nav.classList.contains('open') ? 'block' : 'none';
-}
+    function toggleMenu(){
+      nav.classList.toggle('open');
+      overlay.style.display = nav.classList.contains('open') ? 'block' : 'none';
+    }
 
-burger.addEventListener('click', toggleMenu);
-overlay.addEventListener('click', toggleMenu);
-
-</script>
+    burger.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+  </script>
 
 </body>
 </html>
